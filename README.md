@@ -4,24 +4,6 @@
 
 ---
 
-## Índice
-
-- [Descripción del ejercicio](#descripción-del-ejercicio)
-- [Tabla original (sin normalizar)](#tabla-original-sin-normalizar)
-- [Cómo pedía normalizar el profesor](#cómo-pedía-normalizar-el-profesor)
-- [Proceso de normalización](#proceso-de-normalización)
-- [Modelo final (3FN)](#modelo-final-3fn)
-- [Relaciones del modelo](#relaciones-del-modelo)
-- [Claves primarias y foráneas](#claves-primarias-y-foráneas)
-- [Diagrama Entidad-Relación (modelo de Chen)](#diagrama-entidad-relación-modelo-de-chen)
-- [Diagrama de esquema de base de datos (patas de gallo / Crow's Foot)](#diagrama-de-esquema-de-base-de-datos-patas-de-gallo--crows-foot)
-- [Estructura del repositorio](#estructura-del-repositorio)
-- [Herramientas utilizadas](#herramientas-utilizadas)
-- [Recursos](#recursos)
-- [Autor](#autor)
-
----
-
 ## Descripción del ejercicio
 
 El objetivo es partir de una tabla sin normalizar que registra estudiantes, el aula en la que están matriculados y los cursos (lenguajes de programación) que se imparten en esa aula, y aplicar la Primera, Segunda y Tercera Forma Normal (1FN, 2FN, 3FN) hasta obtener un modelo relacional sin redundancias ni dependencias incorrectas.
