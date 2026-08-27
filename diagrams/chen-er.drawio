@@ -1,0 +1,116 @@
+<mxfile host="app.diagrams.net" agent="claude-cowork" version="24.0.0">
+  <diagram name="Chen ER - Normalizacion Estudiantes" id="chen-er-1">
+    <mxGraphModel dx="1600" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ENTITIES -->
+        <mxCell id="ent_students" value="students" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#1A3A5C;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="130" y="400" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_classrooms" value="classrooms" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#1A3A5C;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="640" y="400" width="170" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="ent_courses" value="courses" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;fontColor=#1A3A5C;fontStyle=1;fontSize=16;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="1150" y="400" width="170" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- RELATIONSHIPS -->
+        <mxCell id="rel_belongs" value="belongs_to" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#7A4A00;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="392" width="150" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="rel_offers" value="offers" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;fontColor=#7A4A00;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="900" y="392" width="150" height="86" as="geometry" />
+        </mxCell>
+
+        <!-- ENTITY-RELATIONSHIP LINES + CARDINALITY LABELS -->
+        <mxCell id="e_stu_rel" style="endArrow=none;html=1;strokeColor=#5A6B7A;strokeWidth=1.5;" edge="1" parent="1" source="ent_students" target="rel_belongs">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_n1" value="N" style="edgeLabel;html=1;fontSize=13;fontStyle=1;fontColor=#333333;align=center;verticalAlign=middle;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="e_stu_rel">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_rel_cls" style="endArrow=none;html=1;strokeColor=#5A6B7A;strokeWidth=1.5;" edge="1" parent="1" source="rel_belongs" target="ent_classrooms">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_1a" value="1" style="edgeLabel;html=1;fontSize=13;fontStyle=1;fontColor=#333333;align=center;verticalAlign=middle;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="e_rel_cls">
+          <mxGeometry x="0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_cls_rel2" style="endArrow=none;html=1;strokeColor=#5A6B7A;strokeWidth=1.5;" edge="1" parent="1" source="ent_classrooms" target="rel_offers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_n2" value="N" style="edgeLabel;html=1;fontSize=13;fontStyle=1;fontColor=#333333;align=center;verticalAlign=middle;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="e_cls_rel2">
+          <mxGeometry x="-0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <mxCell id="e_rel2_cou" style="endArrow=none;html=1;strokeColor=#5A6B7A;strokeWidth=1.5;" edge="1" parent="1" source="rel_offers" target="ent_courses">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl_m1" value="M" style="edgeLabel;html=1;fontSize=13;fontStyle=1;fontColor=#333333;align=center;verticalAlign=middle;labelBackgroundColor=#FFFFFF;" vertex="1" connectable="0" parent="e_rel2_cou">
+          <mxGeometry x="0.2" relative="1" as="geometry"><mxPoint as="offset" /></mxGeometry>
+        </mxCell>
+
+        <!-- ATTRIBUTES: students -->
+        <mxCell id="a_stu_id" value="&lt;u&gt;id_student&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="10" y="230" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_stu_first" value="first_name" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="200" y="200" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_stu_last" value="last_name" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a1" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_stu_id" target="ent_students"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a2" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_stu_first" target="ent_students"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a3" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_stu_last" target="ent_students"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ATTRIBUTES: classrooms -->
+        <mxCell id="a_cls_id" value="&lt;u&gt;id_classroom&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="560" y="580" width="180" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_cls_desc" value="classroom_description" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="780" y="580" width="200" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a4" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_cls_id" target="ent_classrooms"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a5" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_cls_desc" target="ent_classrooms"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ATTRIBUTES: courses -->
+        <mxCell id="a_cou_id" value="&lt;u&gt;id_course&lt;/u&gt;" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="230" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="a_cou_name" value="course_name" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;fontColor=#3A5C2E;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="230" width="170" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="e_a6" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_cou_id" target="ent_courses"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e_a7" style="endArrow=none;html=1;strokeColor=#9AA5AD;strokeWidth=1.3;" edge="1" parent="1" source="a_cou_name" target="ent_courses"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- LEGEND -->
+        <mxCell id="leg_rect" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DAE8FC;strokeColor=#6C8EBF;" vertex="1" parent="1">
+          <mxGeometry x="140" y="740" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_rect_lbl" value="Entidad" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="180" y="738" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_rhomb" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFE6CC;strokeColor=#D79B00;" vertex="1" parent="1">
+          <mxGeometry x="280" y="735" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_rhomb_lbl" value="Relación" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="320" y="738" width="80" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ell" value="" style="ellipse;whiteSpace=wrap;html=1;fillColor=#D5E8D4;strokeColor=#82B366;" vertex="1" parent="1">
+          <mxGeometry x="420" y="738" width="34" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_ell_lbl" value="Atributo (subrayado = clave)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="464" y="738" width="220" height="24" as="geometry" />
+        </mxCell>
+        <mxCell id="leg_card" value="Cardinalidades: 1:N (students-classrooms) &#183; N:M (classrooms-courses)" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontStyle=2;fontColor=#555555;" vertex="1" parent="1">
+          <mxGeometry x="700" y="738" width="480" height="24" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
